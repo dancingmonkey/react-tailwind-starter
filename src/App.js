@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import Navigation from "./Navigation";
 
 const stories = [
   {
@@ -32,15 +33,19 @@ const App = () => {
   );
 
   return (
-    <div className="w-96 mx-auto mt-10 text-white bg-primary p-4 rounded-lg font-sans">
-      <h1 className="text-3xl mb-2 font-bold">My Hacker Stories</h1>
+    <div>
+      <Navigation />
 
-      <Search search={searchTerm} onSearch={handleSearch} />
+      <div className="w-96 mx-auto mt-10 text-white bg-primary p-4 rounded-lg font-sans">
+        <h1 className="text-3xl mb-2 font-bold">My Hacker Stories</h1>
 
-      <hr className="text-secondary" />
+        <Search search={searchTerm} onSearch={handleSearch} />
 
-      <div className="text-primaryLightest py-4">
-        <List list={searchedStories} />
+        <hr className="text-secondary" />
+
+        <div className="text-primaryLightest py-4">
+          <List list={searchedStories} />
+        </div>
       </div>
     </div>
   );
@@ -66,11 +71,11 @@ const List = ({ list }) =>
 const Item = ({ item }) => (
   <div>
     <span>
-      <a href={item.url}>{item.title}</a>
+      <a href={item.url}>{item.title}: </a>
     </span>
-    <span>{item.author}</span>
-    <span>{item.num_comments}</span>
-    <span>{item.points}</span>
+    <span>{item.author} </span>
+    <span>{item.num_comments} </span>
+    <span>{item.points} </span>
   </div>
 );
 
