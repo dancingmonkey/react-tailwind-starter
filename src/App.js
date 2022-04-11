@@ -21,7 +21,7 @@ const stories = [
 ];
 
 const App = () => {
-  const [searchTerm, setSearchTerm] = useState("React");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = event => {
     setSearchTerm(event.target.value);
@@ -32,22 +32,31 @@ const App = () => {
   );
 
   return (
-    <div>
-      <h1>My Hacker Stories</h1>
+    <div className="w-96 mx-auto mt-10 text-white bg-primary p-4 rounded-lg font-sans">
+      <h1 className="text-3xl mb-2 font-bold">My Hacker Stories</h1>
 
       <Search search={searchTerm} onSearch={handleSearch} />
 
-      <hr />
+      <hr className="text-secondary" />
 
-      <List list={searchedStories} />
+      <div className="text-primaryLightest py-4">
+        <List list={searchedStories} />
+      </div>
     </div>
   );
 };
 
 const Search = ({ search, onSearch }) => (
-  <div>
+  <div className="py-4 text-primaryLightest">
     <label htmlFor="search">Search:</label>
-    <input value={search} id="search" type="text" onChange={onSearch}></input>
+    <input
+      className="ml-2 p-0 bg-transparent focus:outline-dashed outline-secondary"
+      value={search}
+      id="search"
+      type="text"
+      onChange={onSearch}
+      placeholder="type here"
+    ></input>
   </div>
 );
 
