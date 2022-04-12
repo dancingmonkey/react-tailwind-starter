@@ -33,19 +33,22 @@ const App = () => {
   );
 
   return (
-    <div>
+    <div className="selection:bg-secondary selection:text-primary">
       <Navigation />
 
-      <div className="w-96 mx-auto mt-10 text-white bg-primary p-4 rounded-lg font-sans">
-        <h1 className="text-3xl mb-2 font-bold">My Hacker Stories</h1>
+      <div className="mx-auto mt-10 w-96 rounded-lg bg-primary p-4 font-sans text-white">
+        <h1 className="mb-2 text-3xl font-bold">My Hacker Stories</h1>
 
         <Search search={searchTerm} onSearch={handleSearch} />
 
         <hr className="text-secondary" />
 
-        <div className="text-primaryLightest py-4">
+        <div className="py-4 text-primaryLightest">
           <List list={searchedStories} />
         </div>
+        <p className="first-letter:text-7xl first-letter:font-bold first-letter:text-secondary">
+          Some random text to test out first letter effect
+        </p>
       </div>
     </div>
   );
@@ -55,7 +58,7 @@ const Search = ({ search, onSearch }) => (
   <div className="py-4 text-primaryLightest">
     <label htmlFor="search">Search:</label>
     <input
-      className="ml-2 p-0 bg-transparent focus:outline-dashed outline-secondary"
+      className="ml-2 bg-transparent p-0 outline-secondary focus:outline-dashed"
       value={search}
       id="search"
       type="text"

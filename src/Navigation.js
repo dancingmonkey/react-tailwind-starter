@@ -16,14 +16,17 @@ function classNames(...classes) {
 
 export default function Example() {
   return (
-    <Disclosure as="nav" className="bg-primaryDark border-b bottom-1 border-secondary">
+    <Disclosure
+      as="nav"
+      className="bottom-1 border-b border-secondary bg-primaryDark"
+    >
       {({ open }) => (
         <>
-          <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-            <div className="relative flex items-center justify-between h-16">
+          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+            <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-primaryLight focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-primaryLight hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -32,20 +35,20 @@ export default function Example() {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="flex-shrink-0 flex items-center">
+              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                <div className="flex flex-shrink-0 items-center">
                   <img
-                    className="block lg:hidden h-8 w-auto"
+                    className="block h-8 w-auto lg:hidden"
                     src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
                     alt="Workflow"
                   />
                   <img
-                    className="hidden lg:block h-8 w-auto"
+                    className="hidden h-8 w-auto lg:block"
                     src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
                     alt="Workflow"
                   />
                 </div>
-                <div className="hidden sm:block sm:ml-6">
+                <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map(item => (
                       <a
@@ -55,7 +58,7 @@ export default function Example() {
                           item.current
                             ? " text-secondary"
                             : "text-white hover:bg-primaryDark hover:text-secondaryLight",
-                          "px-3 py-2 rounded-md text-sm"
+                          "rounded-md px-3 py-2 text-sm"
                         )}
                         aria-current={item.current ? "page" : undefined}
                       >
@@ -68,16 +71,16 @@ export default function Example() {
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button
                   type="button"
-                  className="bg-primaryDark p-1 rounded-full text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                  className="focus:ring-offset-gray-800 rounded-full bg-primaryDark p-1 text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
                 >
                   <span className="sr-only">View notifications</span>
                   <BellIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
 
                 {/* Profile dropdown */}
-                <Menu as="div" className="ml-3 relative">
+                <Menu as="div" className="relative ml-3">
                   <div>
-                    <Menu.Button className="bg-primaryDark flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                    <Menu.Button className="focus:ring-offset-gray-800 flex rounded-full bg-primaryDark text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2">
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="h-8 w-8 rounded-full"
@@ -95,14 +98,14 @@ export default function Example() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <Menu.Items className="ring-black absolute right-0 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-opacity-5 focus:outline-none">
                       <Menu.Item>
                         {({ active }) => (
                           <a
                             href="#"
                             className={classNames(
                               active ? "bg-secondary" : "",
-                              "block px-4 py-2 text-sm text-gray-700"
+                              "text-gray-700 block px-4 py-2 text-sm"
                             )}
                           >
                             Your Profile
@@ -115,7 +118,7 @@ export default function Example() {
                             href="#"
                             className={classNames(
                               active ? "bg-secondary" : "",
-                              "block px-4 py-2 text-sm text-gray-700"
+                              "text-gray-700 block px-4 py-2 text-sm"
                             )}
                           >
                             Settings
@@ -128,7 +131,7 @@ export default function Example() {
                             href="#"
                             className={classNames(
                               active ? "bg-secondary" : "",
-                              "block px-4 py-2 text-sm text-gray-700"
+                              "text-gray-700 block px-4 py-2 text-sm"
                             )}
                           >
                             Sign out
@@ -143,7 +146,7 @@ export default function Example() {
           </div>
 
           <Disclosure.Panel className="sm:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+            <div className="space-y-1 px-2 pt-2 pb-3">
               {navigation.map(item => (
                 <Disclosure.Button
                   key={item.name}
@@ -153,7 +156,7 @@ export default function Example() {
                     item.current
                       ? "bg-primaryDark text-white"
                       : "text-gray-300 hover:bg-primaryLight hover:text-white",
-                    "block px-3 py-2 rounded-md text-base"
+                    "block rounded-md px-3 py-2 text-base"
                   )}
                   aria-current={item.current ? "page" : undefined}
                 >
