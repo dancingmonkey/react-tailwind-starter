@@ -8,18 +8,23 @@ const Welcome = () => {
   const list = info.features;
 
   return (
-    <div className='max-w-md rounded-lg bg-primary  p-4 font-sans text-white'>
-      <h1 className='mb-2 text-3xl font-bold'>{info.welcome}</h1>
+    <div className='w-full max-w-2xl rounded-sm bg-primary bg-gradient-to-r from-[#7928ca] to-[#ff0080] p-1 font-sans text-white'>
+      <div className='h-full w-full rounded-sm bg-primary p-4'>
+        <h1 className='mb-2 text-4xl font-bold'>{info.welcome} 💀</h1>
 
-      <hr className='text-secondary' />
+        <hr className='text-secondary' />
+        <p className='mt-4 text-lg first-letter:text-7xl first-letter:font-bold first-letter:text-secondary'>{info.intro}</p>
 
-      <p className='mt-4 first-letter:text-7xl first-letter:font-bold first-letter:text-secondary'>{info.intro}</p>
-
-      <ul className='ml-4 mt-4 list-disc'>
-        {list.map(x => {
-          return <li className='cursor-pointer text-primaryLight hover:text-white'>{x}</li>;
-        })}
-      </ul>
+        <ul className='ml-4 mt-4 list-disc text-lg'>
+          {list.map(x => {
+            return (
+              <li key={x} className='cursor-pointer text-primaryLight hover:text-white'>
+                {x}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 };
