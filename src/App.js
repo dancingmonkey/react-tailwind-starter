@@ -1,4 +1,4 @@
-import Welcom from "./components/Welcome";
+import Welcom from './components/Welcome';
 
 const App = () => {
   return (
