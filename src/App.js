@@ -1,3 +1,4 @@
+import React from 'react';
 import Welcom from './components/Welcome';
 
 const App = () => {
