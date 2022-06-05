@@ -1,12 +1,14 @@
-import React from 'react';
-import Welcom from './components/Welcome';
+import React from 'react'
+// import Example from './components/Example'
+import Welcome from './components/Welcome'
 
 const App = () => {
   return (
-    <div className="flex h-screen w-full items-center justify-center">
-      <Welcom />
+    <div className="h-full w-full">
+      {/* <Example /> */}
+      <Welcome />
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
